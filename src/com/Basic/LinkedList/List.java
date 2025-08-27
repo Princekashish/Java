@@ -23,6 +23,7 @@ class Lindelist {
     void add(int val) {
         Node newNode = new Node(val, head.next);
         head.next = newNode;
+        size++;
     }
 
     void printList() {
@@ -40,6 +41,7 @@ public class List {
     public static void main(String[] args) {
         Lindelist first = new Lindelist();
         first.add(6);
+        first.add(10);
 
         first.printList();
 
