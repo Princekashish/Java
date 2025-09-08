@@ -1,5 +1,8 @@
 package com.Basic.LinkedList;
 
+import java.util.LinkedHashSet;
+import java.util.LinkedList;
+
 class Node {
     int data;
     Node next;
@@ -34,6 +37,29 @@ class Lindelist {
         }
         System.out.println("null");
     }
+
+    void removeDublicate() {
+        LinkedHashSet<Integer> set = new LinkedHashSet<>();
+        Node current = head.next; // skip dummy node
+
+        while (current != null) {
+            set.add(current.data);
+            current = current.next;
+        }
+
+        // Now rebuild the list
+        Node dummy = new Node(-1, null); // new dummy head
+        Node tail = dummy;
+
+        for (int value : set) {
+            Node newNode = new Node(value, null);
+            tail.next = newNode;
+            tail = newNode;
+        }
+
+        // Reassign cleaned list to current head
+        head.next = dummy.next;
+    }
 }
 
 
@@ -42,7 +68,16 @@ public class List {
         Lindelist first = new Lindelist();
         first.add(6);
         first.add(10);
+        first.add(10);
+        first.add(50);
+        first.add(60);
+        first.add(10);
 
+        System.out.println("Original list:");
+        first.printList();
+
+        System.out.println("After removing duplicates:");
+        first.removeDublicate();
         first.printList();
 
     }
