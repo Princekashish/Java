@@ -45,7 +45,7 @@ class Main {
         System.out.println("null");
     }
 
-    public static int reverse(Node head){
+    public static int count(Node head){
         int count = 0;
         Node current = head;
         while(current !=null){
