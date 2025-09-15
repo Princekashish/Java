@@ -91,3 +91,42 @@ class Main {
         printList(newHead);
     }
 }
+/*
+
+use only in The linked list stores digits in reverse order.
+
+ex-------->
+Linked list: 2 → 4 → 3
+Represents number: 342 (because 3 is the hundreds, 4 is the tens, 2 is the units)
+
+public static int linkedListToNumber(ListNode node) {
+    int num = 0;
+    int place = 1;
+
+    while (node != null) {
+        num += node.val * place;
+        place *= 10;
+        node = node.next;
+    }
+
+    return num;
+}
+
+The linked list stores digits in forward order.
+
+ex------>
+Linked list: 3 → 4 → 2
+Represents number: 342 (same value, different order of digits)
+
+public static int linkedListToNumberForward(ListNode node) {
+    int num = 0;
+    while (node != null) {
+        num = num * 10 + node.val;
+        node = node.next;
+    }
+    return num;
+}
+
+
+
+ */
